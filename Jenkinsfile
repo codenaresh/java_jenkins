@@ -1,7 +1,7 @@
 node {
 stage('SCM Chekout'){
 
- git 'https://github.com/codenaresh/java_jenkins.git'
+ git 'https://github.com/codenaresh/java_jenkins'
 
 }
 
