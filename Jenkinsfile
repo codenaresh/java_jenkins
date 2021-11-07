@@ -1,14 +1,21 @@
-node {
-stage('SCM Chekout'){
+pipeline {
+    agent any
 
- git 'https://github.com/codenaresh/java_jenkins'
-
-}
-
-stage ('compile package'){
- 
- def mvnHome=tool name: 'maven-3', type: 'maven'
- 
- sh "${mvnHome}/bin/maven package
-}
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
 }
